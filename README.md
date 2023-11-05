@@ -17,7 +17,7 @@ This script is designed to follow the trail of HTTP(S) redirects when accessing 
 - Python 3
 - `requests` library
 
-To install the required `requests` library, run:
+To install the required `requests` library, run the following:
 
 ```bash
 pip install requests
