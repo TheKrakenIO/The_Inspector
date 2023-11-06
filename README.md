@@ -28,7 +28,7 @@ To use the script, run it with Python and enter the domain you wish to track:
 Enter the domain: example.com
 
 
-When creating a `README.md` file, ensure it provides a clear description of what the script does, how to set it up, and how to use it. It's also good practice to include information on contributing to the project and the license under which it is released.
+
 
 
 
