@@ -15,6 +15,80 @@ USER_AGENT = "Mozilla/5.0 (compatible; RedirectChecker/1.0; +http://example.com/
 # Enhanced logging configuration with timestamps
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
+def rainbow_progress(iterations, sleep_duration):
+    colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
+
+    for i in tqdm(range(iterations), desc="Progress", ncols=80, bar_format="{desc}: {bar}"):
+        print(colors[i % len(colors)], end="")
+        sleep(sleep_duration)
+
+def display_colored_art(art):
+    init(autoreset=True)
+    banner_lines = art.split("\n")
+    colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
+
+    for line in banner_lines:
+        color_line = ""
+        for i, char in enumerate(line):
+            color_line += colors[i % len(colors)] + char
+        print(color_line)
+
+
+# Replace 'your_ascii_art' with the actual ASCII art you want to display
+your_ascii_art = """
+                                                               
+         ...                                   //*                                                                                                  
+                                                                                                //  /****                                                                                               
+                                                                                             /     //*******                                                                                            
+                                                                                          ///       /////////**                                                                                         
+                                                                                          //        /////////**/,,                                                                                      
+                                                                                         /    .     //////***//,,,,**                                                                                   
+                                                                                    /  /     /      ///*****///,,,**                                                                                    
+                                                                                        /   /       /,,,,,,,///,****                                                                                    
+                                                                           ,/,/          //.   /    /////*,,,/,***/       //**                                                                          
+                                                                            /  ,      /             /*////////////       ***/////                                                                       
+                                                                          //  /                     /**///,,,**///      //** /******                                                                    
+                                                                     */       /  ,/                 /**,,,,,****/     ,*//,     ///****                                                                 
+                                                                 /    .         /  /    /     /   . /**,,,,*****/    ***/          ///////                                                              
+                                                            *      /   //    ,/    /      /    /  * /*,,,,****//    ,****//     *    ///////,                                                           
+                                                                /    /         /*        /  .   /   /*,,****///          ***********    ,*******                                                        
+                                                             /          /                 , /    * //,,***///**                 *          ,,,,,,,,                                                     
+                                                   .     / *                               .   /    /,**/*****                                *,,,,,//                                                  
+                                                              /                           /     /.///*******///                           .********                                                     
+                                                         / /     /                      /     /     /******,,,,,//                     ,,,,,,*/*                                                        
+                                                                / ./ ,             /   /    /       /********,,,**////              /*,,*////                                                           
+                                                                / /     /        /                  /*********,,***///*,,       //////,,,/                                                              
+                                                                            / /          //         ///////////* ***/**,,,**.*///////,,                                                                 
+                                                                     /   /  /     . /  / ./         /////////**/,,  **,,,,///***///,                                                                    
+                                                              //* .    ./       ,/   /   /          //////***//,,,,*   ,/////////     ,,,,,                                                             
+                                                            /  /     /    * / /    /   /     //   / ///**** ///,,,***,     //*     //////****,                                                          
+                                                        /     /       * /        // /   / / /      //,,,,,,,/ /,*****/*.        **/////   ***,,,*                                                       
+                                                         , /        / /   ,/   /       //  /  ,    ,//////,,,/   *//*////    /*****/*      **,,,                                                        
+                                                           /  /.      //    /    /,      / /      /   /////////    ***//****/////*    // /***                                                           
+                                                                              /    /           //       //,,,////    **////**/**      **///                                                             
+                                                                           //         //     ./           ,,/////*      ////**                                                                          
+                                                                             /*      / //   /               /////***      /*                                                                            
+                                                                                        / /                   ///,,,,                                                                                   
+                                                                                  /     /     / / /   ,,//      ******                                                                                  
+                                                                                  /  //       /  /     ////       **////                                                                                
+                                                                               .     *     //  ,/        *****///////////                                                                               
+                                                                                        //                //////                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                            ,,,     ,,,,   ,,,,,,,,,,,        ,,,,,      ,,,      ,,,,  ,,,,,,,,,,,,  ,,,,,      ,,,      ,,,    .,,,,,,,,,,                                            
+                                            ,,,  ,,,,      ,,,      ,,,      ,,, ,,,     ,,,   ,,,,     ,,,           ,,,,,,,    ,,,      ,,,   ,,,       ,,,                                           
+                                            *******        ************    ****   ***    ********       ***********   ***  ****  ***      ***   ***       ***                                           
+                                            ///   ////     ///      ///   /////////////  ///    ////    ///*********  ///    ///////      ///   /////////////                                    
+                                   ..    .             
+
+"""
+
+created_by = "Created by ketchup"
+version = "Version 1.0"
+
+
 # Function to prepend http or https to the domain
 def prepend_scheme(domain):
     schemes = ['http://', 'https://']
@@ -124,6 +198,7 @@ def get_redirects(domain):
 
 # Main execution with input validation and DNS check
 def main():
+    display_colored_art(your_ascii_art)
     try:
         domain = input("Enter the domain: ")
         if validate_domain(domain) and check_dns_resolution(domain):
