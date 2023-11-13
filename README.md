@@ -9,7 +9,7 @@ This script is designed to follow the trail of HTTP(S) redirects when accessing 
 - Follows up to 10 redirects by default.
 - Logs the entire redirect chain along with status codes and IP addresses.
 - Warns if a redirect attempts to initiate a file download.
-- User-Agent string mimicry for improved website compatibility.
+- User-agent string mimicry for improved website compatibility.
 - Uses Python's `requests` library for handling HTTP requests.
 
 ## Requirements
