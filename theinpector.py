@@ -4,7 +4,13 @@ import time
 import logging
 import socket
 from urllib.parse import urlparse
+from colorama import Fore, init
+from tqdm import tqdm
 
+# Initialize Colorama
+init(autoreset=True)
+
+#
 # Constants
 TIMEOUT = 20  # Increased timeout
 MAX_RETRIES = 3  # Number of retries
@@ -15,30 +21,28 @@ USER_AGENT = "Mozilla/5.0 (compatible; RedirectChecker/1.0; +http://example.com/
 # Enhanced logging configuration with timestamps
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
+# Function to display rainbow progress
 def rainbow_progress(iterations, sleep_duration):
     colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
-
     for i in tqdm(range(iterations), desc="Progress", ncols=80, bar_format="{desc}: {bar}"):
         print(colors[i % len(colors)], end="")
-        sleep(sleep_duration)
+        time.sleep(sleep_duration)
 
+# Function to display colored ASCII art
 def display_colored_art(art):
-    init(autoreset=True)
     banner_lines = art.split("\n")
     colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
-
     for line in banner_lines:
         color_line = ""
         for i, char in enumerate(line):
             color_line += colors[i % len(colors)] + char
         print(color_line)
 
-
-# Replace 'your_ascii_art' with the actual ASCII art you want to display
+# ASCII Art to display
+# ASCII Art to display
 your_ascii_art = """
-                                                               
          ...                                   //*                                                                                                  
-                                                                                                //  /****                                                                                               
+                                                                                                //  /               ****                                                                                               
                                                                                              /     //*******                                                                                            
                                                                                           ///       /////////**                                                                                         
                                                                                           //        /////////**/,,                                                                                      
@@ -82,11 +86,26 @@ your_ascii_art = """
                                             *******        ************    ****   ***    ********       ***********   ***  ****  ***      ***   ***       ***                                           
                                             ///   ////     ///      ///   /////////////  ///    ////    ///*********  ///    ///////      ///   /////////////                                    
                                    ..    .             
-
 """
 
 created_by = "Created by ketchup"
 version = "Version 1.0"
+
+# Display the ASCII art at the start of the program
+display_colored_art(your_ascii_art)
+print(created_by)
+print(version)
+rainbow_progress(10, 0.1)  # Display progress bar for effect, adjust as needed
+
+
+# Function to process the response
+def process_response(response, label):
+    url = response.url
+    status_code = response.status_code
+    ip = retrieve_ip(urlparse(url).hostname)
+    logging.info(f"\n{label}:\n - URL: {url}\n - Status code: {status_code}\n - IP address: {ip}\n")
+
+
 
 
 # Function to prepend http or https to the domain
@@ -107,8 +126,7 @@ def process_response(response, label):
     url = response.url
     status_code = response.status_code
     ip = retrieve_ip(urlparse(url).hostname)
-    logging.info(f"\n{label}:\n - URL: {url}\n - Status code: {status_code}\n - IP address: {ip}\n")
-
+    logging.info(f"{label} - URL: {url} - Status code: {status_code} - IP address: {ip}")
 
 # Function to retrieve IP address
 def retrieve_ip(hostname):
@@ -198,11 +216,10 @@ def get_redirects(domain):
 
 # Main execution with input validation and DNS check
 def main():
-    display_colored_art(your_ascii_art)
     try:
         domain = input("Enter the domain: ")
         if validate_domain(domain) and check_dns_resolution(domain):
-            print(f"Checking redirects for {domain}...\n")
+            print(f"\nChecking redirects for {domain}...\n")
             get_redirects(domain)
         else:
             print("Please check the domain name and try again.")
@@ -210,7 +227,6 @@ def main():
         logging.error(f"An unexpected error occurred: {e}")
     finally:
         print("\nThanks and good luck on the hunt!")
-
 
 if __name__ == "__main__":
     main()
