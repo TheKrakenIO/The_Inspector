@@ -38,7 +38,7 @@ def display_colored_art(art):
             color_line += colors[i % len(colors)] + char
         print(color_line)
 
-# ASCII Art to display
+
 # ASCII Art to display
 your_ascii_art = """
          ...                                   //*                                                                                                  
@@ -88,7 +88,7 @@ your_ascii_art = """
                                    ..    .             
 """
 
-created_by = "Created by ketchup"
+created_by = "Created by KrakenIO" #thekrakenIO 
 version = "Version 1.0"
 
 # Display the ASCII art at the start of the program
@@ -226,7 +226,7 @@ def main():
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
     finally:
-        print("\nThanks and good luck on the hunt!")
+        print("\nThanks and good luck on the hunt!") #^_^
 
 if __name__ == "__main__":
     main()
