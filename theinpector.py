@@ -121,7 +121,7 @@ def prepend_scheme(domain):
             logging.warning(f"Error with {url}: {e}")
     return None
 
-# Function to process the response
+# Function to process the response  uwu
 def process_response(response, label):
     url = response.url
     status_code = response.status_code
