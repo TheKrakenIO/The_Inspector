@@ -73,7 +73,28 @@ IP addresses may vary due to load balancers (like Cloudflare).
 ---
 # Fallback
 If the new version of the tool doesn't work on your machine, you can use the old version instead.
+---
+# Version
 
+    v1.1: Basic redirection, DNS, WHOIS (via ipwhois lib), reverse DNS.
+
+    v1.3: Adds:
+
+       - SSL cert parsing
+
+       - DNS record extraction (MX, TXT, CNAME)
+
+       -  Header classification
+
+       - JS detection
+
+        - Top-10 link extraction (uses BeautifulSoup, optional dep)
+
+ * Output & Export
+
+   - v1.1: Console logging only.
+
+   - v1.3: Supports export to JSON, CSV, and TXT. Useful for reporting and automation.
 
 
 
