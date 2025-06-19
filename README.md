@@ -10,7 +10,7 @@ A Python script to dig into a domain’s details—redirects, WHOIS, DNS records
 - Grabs WHOIS Info: Retrieves network details (such as NetName and OrgName) for the domain’s IP address.
 - Checks DNS Records: Looks up MX, TXT, and CNAME records.
 - Analyzes SSL Certs: Extracts issuer, subject, and validity dates for HTTPS sites.
-- Scans Headers: Displays key HTTP headers (E.g., Server, Content-Type).
+- Scans Headers: Displays key HTTP headers ( Server, Content-Type).
 - Detects JavaScript: Spots inline scripts, .js files, or JavaScript URLs on the final page.
 - Extracts Links: Grabs up to 10 links from the final page (needs beautifulsoup4).
 - Exports Results: Saves output as JSON, CSV, or TXT.
