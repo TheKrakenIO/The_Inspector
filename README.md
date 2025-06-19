@@ -72,7 +72,9 @@ IP addresses may vary due to load balancers (like Cloudflare).
 
 ---
 # Fallback
+
 If the new version of the tool doesn't work on your machine, you can use the old version instead.
+
 ---
 # Version
 
