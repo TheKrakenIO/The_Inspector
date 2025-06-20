@@ -93,8 +93,11 @@ If the new version of the tool doesn't work on your machine, you can use the old
        - Top-10 link extraction (uses BeautifulSoup, optional dep)
 
       gv1.3: Adds graphical insights for better visibility and presentation.
+      
         - Redirect Graph (Graphviz): Visual map of the entire redirect chain — each URL is a node, edges show HTTP status and Location.
-        - Edge Labeling: Arrows include metadata, such as redirect status codes and target URLs, which aid in debugging chained redirects.
+        
+        - Edge Labeling: Arrows include metadata, such as redirect status codes and target URLs, which facilitate debugging of chained redirects.
+        
         - Node Styling: URLs are displayed as colored boxes, making the flow easier to trace.
       
 
