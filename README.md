@@ -99,6 +99,14 @@ If the new version of the tool doesn't work on your machine, you can use the old
         - Edge Labeling: Arrows include metadata, such as redirect status codes and target URLs, which facilitate debugging of chained redirects.
         
         - Node Styling: URLs are displayed as colored boxes, making the flow easier to trace.
+
+      v2.0: builds on everything from v1.3 and gv1.1, and adds:
+
+        -  Graphviz + Matplotlib support for two types of redirect chain visualizations (user can choose)
+
+        -  Interactive CLI menu before scan (user configures output format, file name, user-agent, and ASCII art)
+
+        -  Matplotlib flowchart using networkx – less dependency-heavy and customizable
       
 
  * Output & Export
@@ -108,7 +116,13 @@ If the new version of the tool doesn't work on your machine, you can use the old
    - v1.3: Supports export to JSON, CSV, and TXT. Useful for reporting and automation.
 
    - gv1.1: Adds PNG export of the redirect graph. Keeps the same structured data export as v1.3.
-
+  
+   - v2.0: Export Formats: JSON, CSV, TXT (same as v1.3), filename Customization: Manual or auto (timestamped), user-controlled Output: Optional export via CLI or interactive prompt.
+      - logs + Visuals: Combines both for human and machine parsing/reporting.
+      - Redirect Graphs:
+       * Graphviz → PNG (e.g., redirect_graphviz_<domain>.png)
+       *  Matplotlib → Flowchart PNG (e.g., redirect_matplotlib_<domain>.png)
+    
 
 
 
