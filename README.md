@@ -92,7 +92,7 @@ If the new version of the tool doesn't work on your machine, you can use the old
 
          - Top-10 link extraction (uses BeautifulSoup, optional dep)
 
-      gv1.3: Adds graphical insights for better visibility and presentation.
+      gv1.1: Adds graphical insights for better visibility and presentation.
       
         - Redirect Graph (Graphviz): Visual map of the entire redirect chain — each URL is a node, edges show HTTP status and Location.
         
@@ -107,6 +107,7 @@ If the new version of the tool doesn't work on your machine, you can use the old
 
    - v1.3: Supports export to JSON, CSV, and TXT. Useful for reporting and automation.
 
+   - gv1.1: Adds PNG export of the redirect graph. Keeps the same structured data export as v1.3.
 
 
 
