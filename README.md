@@ -78,19 +78,19 @@ If the new version of the tool doesn't work on your machine, you can use the old
 ---
 # Version
 
-    v1.1: Basic redirection, DNS, WHOIS (via ipwhois lib), reverse DNS.
+      v1.1: Basic redirection, DNS, WHOIS (via ipwhois lib), reverse DNS.
 
-    v1.3: Adds:
+      v1.3: Adds:
 
-       - SSL cert parsing
+         - SSL cert parsing
 
-       - DNS record extraction (MX, TXT, CNAME)
+         - DNS record extraction (MX, TXT, CNAME)
 
-       - Header classification
+         - Header classification
 
-       - JS detection
+         - JS detection
 
-       - Top-10 link extraction (uses BeautifulSoup, optional dep)
+         - Top-10 link extraction (uses BeautifulSoup, optional dep)
 
       gv1.3: Adds graphical insights for better visibility and presentation.
       
