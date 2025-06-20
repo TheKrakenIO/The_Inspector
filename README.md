@@ -118,10 +118,10 @@ If the new version of the tool doesn't work on your machine, you can use the old
    - gv1.1: Adds PNG export of the redirect graph. Keeps the same structured data export as v1.3.
   
    - v2.0: Export Formats: JSON, CSV, TXT (same as v1.3), filename Customization: Manual or auto (timestamped), user-controlled Output: Optional export via CLI or interactive prompt.
-      - logs + Visuals: Combines both for human and machine parsing/reporting.
+      - Logs + Visuals: Combines both for human and machine parsing and reporting.
       - Redirect Graphs:
-       * Graphviz → PNG (e.g., redirect_graphviz_<domain>.png)
-       *  Matplotlib → Flowchart PNG (e.g., redirect_matplotlib_<domain>.png)
+       * Graphviz → PNG ( redirect_graphviz_<domain>.png)
+       *  Matplotlib → Flowchart PNG ( redirect_matplotlib_<domain>.png)
     
 
 
