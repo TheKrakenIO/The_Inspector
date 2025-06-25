@@ -48,7 +48,7 @@ python theinspector.py example.com --user-agent "MyCustomAgent/1.0"
 python theinspector.py example.com --output-format json
 ```
 
---output-file <filename>: Specify a custom output file name (defaults to inspector_<domain>_<timestamp>.<format>).
+--output-file <filename>: Specify a custom output file name (defaults to inspector_domain_timestamp.format).
 ```bash
 python theinspector.py example.com --output-format txt --output-file results.txt
 Example Output
